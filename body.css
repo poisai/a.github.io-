@@ -1,0 +1,344 @@
+
+/* Định dạng chung */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #8cc5eb;
+    background-size: cover;
+    color: white;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Xóa margin mặc định của h1, h2 */
+h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-image: url('bghd.jpg'); /* Đường dẫn ảnh */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 15px 0; /* Giảm padding để tránh khoảng trống */
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: none;
+    margin: 0;
+}
+
+
+/* Logo + Tên thương hiệu */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    margin-right: 10px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul.menu-left {
+    margin-left: 20px;
+}
+
+nav ul.menu-right {
+    margin-right: 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(24, 22, 22);
+    font-weight: bold;
+}
+
+/* Thanh tìm kiếm */
+.search-container {
+    display: flex;
+    align-items: center;
+    background: rgb(183, 230, 241);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 15px;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 180px;
+}
+
+.search-container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Banner */
+#banner {
+    text-align: center; /* Căn giữa tiêu đề */
+    padding: 20px;
+}
+
+#banner h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.image-box {
+    position: relative;
+    text-align: center;
+    background: #8abae7;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+.image-box p {
+    font-size: 14px;  /* Cỡ chữ */
+    color: #333;  /* Màu chữ xám đậm */
+    font-weight: 500;  /* Độ đậm của chữ */
+    text-align: center;  /* Căn giữa chữ */
+    margin-top: 8px;  /* Khoảng cách với ảnh */
+}
+
+.kp {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.kp:hover {
+    transform: scale(1.05);
+}
+
+/* Hiệu ứng "Mua ngay" xuất hiện từ dưới lên */
+.overlay {
+    position: absolute;
+    bottom: -50px;  /* Ẩn xuống dưới */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(73, 125, 221, 0.7);
+    color: white;
+    padding: 12px 200px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Khi di chuột vào, chữ trượt từ dưới lên */
+.image-box:hover .overlay {
+    bottom: 20px;  /* Dịch lên trên */
+    opacity: 1;
+}
+
+
+
+
+/* Sản phẩm */
+#banner {
+    background-image: url(bgkp.jpg);
+    background-size: cover ;
+    background-position: center ;
+    background-repeat: no-repeat ;
+    padding: 000px 0px; 
+    width: 100%;
+    color : rgb(250, 250, 250) ;
+    margin-top: 0;
+}
+#products {
+    background-image: url('bgproducts.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px 0;
+    margin: 0; /* Xóa khoảng cách */
+    display: block;
+}
+
+#products {
+    text-align: center; /* Căn giữa tiêu đề */
+    padding: 20px;
+}
+
+#products h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.product {
+    position: relative;
+    display: inline-block; /* Hiển thị ngang */
+    width: 250px; /* Chỉnh kích thước box sản phẩm */
+    margin: 15px;
+    overflow: hidden; /* Ẩn phần tràn ra ngoài */
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+}
+
+.product img {
+    width: 100%; /* Ảnh tự động co giãn theo box */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product:hover img {
+    transform: scale(1.1); /* Khi hover, ảnh phóng to nhẹ */
+}
+
+/* Định dạng phần chữ */
+.product p {
+    margin: 10px 5;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Hiệu ứng "Mua ngay" xuất hiện từ dưới lên */ 
+.overlaynb { 
+    position: absolute;
+    bottom: -50px; /* Ẩn xuống dưới */
+    left: 50%;  
+    transform: translateX(-50%);
+    background: rgba(73, 125, 221, 0.7);
+    color: white;
+    padding: 12px 200px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Khi di chuót vào, chữ truien tu dưới lên */  
+.product:hover .overlaynb {
+    bottom: 20px; /* Dịch lên trên */
+    opacity: 1;
+}
+
+/*footer */
+footer {
+    background-image: url('bgfotter.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 30px 0;
+    color: white;
+    margin: 0; /* Xóa khoảng cách */
+    display: block;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-column {
+    width: 22%;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-column p {
+    font-size: 14px;
+    color: #333;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.social-icons img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.payment-icons img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.footer-column input {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.footer-column button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.footer-column button:hover {
+    background-color: #45a049;
+}
+#banner, #products, footer {
+    width: 100%;
+    display: block;
+}
